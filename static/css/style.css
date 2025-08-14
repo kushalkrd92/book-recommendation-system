@@ -1,0 +1,27 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.cards{
+  margin: 30px;
+  padding: 20px;
+}
+.my-btn{
+  margin: 20px;
+  height: 50px;
+  width: 150px;
+  font-size: 20px;
+}
+.btn-container{
+  margin-top: 30px;
+}
+.hero-container{
+  margin-top: 30px;
+}
+.text-color{
+  color: aliceblue;
+}
+.my-img{
+  margin: 15px;
+}

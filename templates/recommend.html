@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Recommendator System</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+  <nav class="navbar bg-dark border-body" data-bs-theme="dark">
+    <div class="container-fluid">
+      <h2><a class="badge text-bg-light" href="/">Book Recommendator</a></h2>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/">Top Rated</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/recommend">Recommend</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="">
+    <div class="text-center hero-container">
+      <h1 class="display-5 fw-bold text-body-emphasis">Find Books of Your Liking</h1>
+    </div>
+
+    <div class="container btn-container">
+      <form action="/recommend_books" method="post">
+        <input class="form-control form-control-lg" name="user_input" type="text" placeholder="Enter book name"
+          aria-label=".form-control-lg example">
+        <input type="submit" class="btn btn-success my-btn">
+      </form>
+    </div>
+
+    {% if data %}
+    <div class="cards row" style="display: flex; justify-content: space-around; align-items: center">
+      {% for i in data %}
+      <div class="card bg-dark text-light mb-3 d-inline-block my-3 mx-3 px-2 py-2" style="max-width:250px">
+        <img src="{{i[2]}}" style="height:250px; width: 200px" class="card-img-top my-img" alt="..." />
+        <div class="card-body">
+          <h4 class="card-title"><span>{{i[0]}}</span></h4>
+          <h5 class="text-white"><span>{{i[1]}}</span></h5>
+          <h6 class="text-white"><span>{{i[3]}}</span></h6>
+          <h6 class="text-white"><span>{{i[4]}}</span></h6>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="container">
+    <footer class="py-3 my-4">
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+      </ul>
+      <p class="text-center text-body-secondary">© 2025 Company, Inc</p>
+    </footer>
+  </div>
+  {% endif %}
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
