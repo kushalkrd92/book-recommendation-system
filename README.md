@@ -46,7 +46,7 @@ Project dependencies are listed in `requirements.txt`
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/book-recommendation-system.git
+git clone https://github.com/kushalkrd92/book-recommendation-system.git
 cd book-recommendation-system
 ```
 
